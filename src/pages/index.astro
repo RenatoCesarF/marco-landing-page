@@ -8,8 +8,8 @@
   <meta property="og:title" content="Marco — projetos com direção">
   <meta property="og:description" content="Planeje o caminho, escolha o foco e transforme trabalho em progresso visível.">
   <title>Marco — Projetos com direção</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style is:global>
     :root {
       --yellow: #f2b84b;
       --yellow-strong: #eba91d;
@@ -1929,7 +1929,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Navegação principal">
       <a class="brand" href="#inicio" aria-label="Marco — início">
-        <img class="brand-logo brand-logo--header" src="Marco/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png" alt="">
+        <img class="brand-logo brand-logo--header" src="/marco-icon.png" alt="">
         <span>Marco</span>
       </a>
       <div class="nav-links">
@@ -1980,7 +1980,7 @@
             <div class="window-body">
               <aside class="app-sidebar">
                 <div class="sidebar-logo">
-                  <img class="brand-logo brand-logo--sidebar" src="Marco/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png" alt="">
+                  <img class="brand-logo brand-logo--sidebar" src="/marco-icon.png" alt="">
                   Marco
                 </div>
                 <div class="sidebar-list">
@@ -1995,7 +1995,7 @@
               </aside>
               <div class="app-main">
                 <div class="project-heading">
-                  <div class="project-avatar"><img class="brand-logo brand-logo--project" src="Marco/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png" alt=""></div>
+                  <div class="project-avatar"><img class="brand-logo brand-logo--project" src="/marco-icon.png" alt=""></div>
                   <div>
                     <h3>Lançar o Marco</h3>
                     <p>Uma forma mais humana de conduzir projetos.</p>
@@ -2197,7 +2197,7 @@
             <h3>Marco para macOS</h3>
             <p>Experiência nativa, atalhos de teclado, barra do sistema e notificações integradas.</p>
             <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
-            <a class="download-link" href="downloads/Marco-macOS.dmg" download>Baixar para Mac <span>↓</span></a>
+            <a class="download-link" href="/downloads/Marco-macOS.dmg" download>Baixar para Mac <span>↓</span></a>
           </article>
 
           <article class="download-card reveal">
@@ -2208,7 +2208,7 @@
             <h3>Marco para Windows</h3>
             <p>A mesma visão de projeto, preparada para acompanhar seu fluxo no Windows.</p>
             <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
-            <a class="download-link" href="downloads/Marco-Windows.exe" download>Download para Windows <span>↓</span></a>
+            <a class="download-link" href="/downloads/Marco-Windows.exe" download>Download para Windows <span>↓</span></a>
           </article>
 
           <article class="download-card reveal">
@@ -2219,7 +2219,7 @@
             <h3>Marco para Linux</h3>
             <p>Um futuro cliente leve para quem prefere construir e organizar em ambiente aberto.</p>
             <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
-            <a class="download-link" href="downloads/Marco-Linux.AppImage" download>Download para Linux <span>↓</span></a>
+            <a class="download-link" href="/downloads/Marco-Linux.AppImage" download>Download para Linux <span>↓</span></a>
           </article>
         </div>
 
@@ -2231,7 +2231,7 @@
       <div class="container">
         <div class="cta-card reveal">
           <div class="cta-content">
-            <div class="cta-logo"><img src="Marco/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png" alt="Ícone do Marco"></div>
+            <div class="cta-logo"><img src="/marco-icon.png" alt="Ícone do Marco"></div>
             <h2>Todo projeto merece<br>um próximo marco.</h2>
             <p>Menos painéis cinzas. Mais clareza, personalidade e vontade de continuar. Organize o caminho e volte a sentir o projeto avançar.</p>
             <a class="button button-primary" href="#download">Começar com o Marco</a>
@@ -2244,7 +2244,7 @@
   <footer>
     <div class="container footer-grid">
       <div class="brand">
-        <img class="brand-logo brand-logo--footer" src="Marco/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png" alt="">
+        <img class="brand-logo brand-logo--footer" src="/marco-icon.png" alt="">
         <span>Marco</span>
         <span style="font-size:12px;font-weight:500;color:var(--ink-muted)">Projetos com direção.</span>
       </div>
@@ -2259,7 +2259,7 @@
     </div>
   </footer>
 
-  <script>
+  <script is:inline>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const reveals = document.querySelectorAll('.reveal');
