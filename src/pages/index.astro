@@ -1467,6 +1467,11 @@
       background: var(--yellow);
     }
 
+    .download-card.available {
+      border-color: rgba(47, 118, 85, 0.28);
+      background: linear-gradient(155deg, #fbfdfb 0%, #f1f8f4 100%);
+    }
+
     .platform-icon {
       width: 56px;
       height: 56px;
@@ -1480,14 +1485,6 @@
     .platform-icon svg {
       width: 28px;
       height: 28px;
-    }
-
-    .linux-glyph {
-      display: block;
-      font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-      font-size: 31px;
-      line-height: 1;
-      filter: grayscale(1) contrast(1.08);
     }
 
     .download-card h3 {
@@ -1521,6 +1518,18 @@
       text-transform: uppercase;
     }
 
+    .platform-badge.is-available {
+      color: #266044;
+      background: rgba(47, 118, 85, 0.12);
+    }
+
+    .download-actions {
+      width: 100%;
+      display: grid;
+      gap: 8px;
+      margin-top: auto;
+    }
+
     .download-link {
       width: 100%;
       min-height: 45px;
@@ -1534,6 +1543,34 @@
       background: var(--white);
       font-size: 14px;
       font-weight: 750;
+    }
+
+    .download-actions .download-link {
+      margin-top: 0;
+    }
+
+    .download-link.secondary {
+      min-height: 40px;
+      color: var(--graphite);
+      border-color: rgba(34, 36, 38, 0.12);
+      background: transparent;
+      font-size: 12px;
+    }
+
+    .download-link.unavailable {
+      color: var(--ink-muted);
+      border-style: dashed;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: not-allowed;
+    }
+
+    .download-meta {
+      color: var(--ink-muted);
+      font-size: 10px;
+      font-weight: 680;
+      letter-spacing: 0.045em;
+      text-align: center;
+      text-transform: uppercase;
     }
 
     .recommended .download-link {
@@ -2185,45 +2222,55 @@
         <div class="downloads-heading">
           <div class="section-kicker">Escolha sua plataforma</div>
           <h2 class="section-heading">Leve seus projetos<br>para onde trabalha.</h2>
-          <p class="section-lead">O Marco começa no macOS. As versões para Windows e Linux já têm seu lugar reservado no caminho.</p>
+          <p class="section-lead">Baixe a experiência nativa no macOS ou experimente a nova versão beta para Linux. O instalador do Windows está em validação.</p>
         </div>
 
         <div class="download-grid">
           <article class="download-card recommended reveal">
-            <span class="platform-badge">Disponível primeiro</span>
+            <span class="platform-badge">Disponível</span>
             <div class="platform-icon">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.9c0-2.8 2.3-4.2 2.4-4.3a5.2 5.2 0 0 0-4.1-2.2c-1.7-.2-3.4 1-4.3 1-.9 0-2.3-1-3.8-1C5 6.5 3.1 7.6 2 9.5c-2.2 3.8-.6 9.4 1.6 12.5 1.1 1.5 2.3 3.1 3.9 3 1.5-.1 2.1-1 4-1s2.4 1 4 1c1.7 0 2.7-1.5 3.8-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-4.3-1.7-4.3-5.6ZM13.9 4.6A5 5 0 0 0 15.1 1a5 5 0 0 0-3.3 1.7 4.7 4.7 0 0 0-1.2 3.5 4.1 4.1 0 0 0 3.3-1.6Z" transform="scale(.8) translate(2 -1)"></path></svg>
             </div>
             <h3>Marco para macOS</h3>
             <p>Experiência nativa, atalhos de teclado, barra do sistema e notificações integradas.</p>
-            <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
             <a class="download-link" href="https://github.com/RenatoCesarF/marco-landing-page/releases/download/0.1/Marco-1.0-universal.dmg" download>Baixar para Mac <span>↓</span></a>
           </article>
 
           <article class="download-card reveal">
-            <span class="platform-badge">Em breve</span>
+            <span class="platform-badge">Em validação</span>
             <div class="platform-icon">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 4.1 10.2 3v8H2V4.1Zm9.2-1.2L22 1.5V11H11.2V2.9ZM2 12h8.2v8L2 18.9V12Zm9.2 0H22v9.5l-10.8-1.4V12Z"></path></svg>
             </div>
             <h3>Marco para Windows</h3>
-            <p>A mesma visão de projeto, preparada para acompanhar seu fluxo no Windows.</p>
-            <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
-            <a class="download-link" href="/downloads/Marco-Windows.exe" download>Download para Windows <span>↓</span></a>
+            <p>A mesma visão de projeto está sendo empacotada e validada para acompanhar seu fluxo no Windows.</p>
+            <div class="download-actions">
+              <span class="download-link unavailable" aria-disabled="true">Instalador em preparação</span>
+              <a class="download-link secondary" href="https://github.com/RenatoCesarF/Marco-flutter" target="_blank" rel="noopener noreferrer">Acompanhar desenvolvimento <span>↗</span></a>
+            </div>
           </article>
 
-          <article class="download-card reveal">
-            <span class="platform-badge">Em breve</span>
+          <article class="download-card available reveal">
+            <span class="platform-badge is-available">Beta disponível</span>
             <div class="platform-icon">
-              <span class="linux-glyph" aria-hidden="true">🐧</span>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path fill="#242628" d="M16 2.5c-5.2 0-8.6 5.2-8.6 11.6 0 2.4.5 4.6 1.4 6.4-1.5 1.5-2.6 3.6-2.9 6.2 2.1-.2 4-.8 5.6-1.8 1.3.8 2.8 1.2 4.5 1.2s3.2-.4 4.5-1.2c1.6 1 3.5 1.6 5.6 1.8-.3-2.6-1.4-4.7-2.9-6.2.9-1.8 1.4-4 1.4-6.4C24.6 7.7 21.2 2.5 16 2.5Z"/>
+                <ellipse cx="16" cy="17" rx="5.8" ry="7.1" fill="#fff"/>
+                <circle cx="13.4" cy="10.6" r="1.1" fill="#fff"/>
+                <circle cx="18.6" cy="10.6" r="1.1" fill="#fff"/>
+                <path fill="#F2B84B" d="m16 12.2 4.2 2.2-4.2 2.1-4.2-2.1 4.2-2.2ZM10.8 25.1c-2.1.2-3.8 1.1-4.9 2.5 2.4.7 4.7.5 6.5-.5l-1.6-2Zm10.4 0-1.6 2c1.8 1 4.1 1.2 6.5.5-1.1-1.4-2.8-2.3-4.9-2.5Z"/>
+              </svg>
             </div>
             <h3>Marco para Linux</h3>
-            <p>Um futuro cliente leve para quem prefere construir e organizar em ambiente aberto.</p>
-            <!-- Substitua o caminho abaixo pelo arquivo final do instalador. -->
-            <a class="download-link" href="/downloads/Marco-Linux.AppImage" download>Download para Linux <span>↓</span></a>
+            <p>A experiência local-first do Marco em versão beta para computadores Linux de 64 bits.</p>
+            <div class="download-actions">
+              <a class="download-link" href="/downloads/Marco-0.1.0-rc.1-linux-x86_64.AppImage" download>Baixar AppImage <span>↓</span></a>
+              <a class="download-link secondary" href="/downloads/marco_0.1.0~rc.1_amd64.deb" download>Ubuntu / Debian (.deb) <span>↓</span></a>
+              <span class="download-meta">v0.1.0-rc.1 · x86_64 · beta</span>
+            </div>
           </article>
         </div>
 
-        <p class="download-help">Encontrou um problema ou precisa de ajuda? <a href="https://github.com/RenatoCesarF/marco-landing-page/issues/new" target="_blank" rel="noopener noreferrer">Abra uma issue no GitHub</a>.</p>
+        <p class="download-help">Os builds beta podem exibir avisos do sistema. <a href="/downloads/SHA256SUMS-linux.txt">Verifique os checksums do Linux</a> ou <a href="https://github.com/RenatoCesarF/marco-landing-page/issues/new" target="_blank" rel="noopener noreferrer">abra uma issue no GitHub</a>.</p>
       </div>
     </section>
 

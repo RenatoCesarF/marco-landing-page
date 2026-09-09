@@ -1,0 +1,2 @@
+2790a512ac77b6d0167c491ced7fcd5c59933084faedbc74c3c1f09b728a31fd  /out/Marco-0.1.0-rc.1-linux-x86_64.AppImage
+87e42c0150fd4bc4c577756b9654e4671b92ba2efc1e79b4cab391caf5843fc5  /out/marco_0.1.0~rc.1_amd64.deb
