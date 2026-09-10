@@ -180,16 +180,18 @@ Antes de publicar, verifique a página em diferentes larguras de tela e confirme
 
 ## Downloads
 
-A landing apresenta o Marco nas três plataformas desktop. macOS e Linux já possuem download; o pacote do Windows permanece desabilitado até que um instalador validado seja produzido em um runner Windows.
+A landing apresenta o Marco nas três plataformas desktop. macOS possui a experiência nativa, enquanto Windows e Linux estão disponíveis como versões beta.
 
 | Plataforma | Distribuição | Situação |
 | --- | --- | --- |
 | macOS | `Marco-1.0-universal.dmg` via GitHub Releases | Disponível; ainda sem assinatura/notarização da Apple. |
-| Windows | Instalador `.exe` | Em validação; o card não expõe um link quebrado. |
+| Windows | `public/downloads/Marco-0.1.0-rc.1-windows-x64.zip` | Beta disponível para x64; inclui instalador, licenças e checksum. |
 | Linux | `public/downloads/Marco-0.1.0-rc.1-linux-x86_64.AppImage` | Beta disponível para x86_64. |
 | Linux (Debian/Ubuntu) | `public/downloads/marco_0.1.0~rc.1_amd64.deb` | Beta disponível para amd64. |
 
-Os pacotes Linux têm seus hashes SHA-256 registrados em `public/downloads/SHA256SUMS-linux.txt`. Para publicar uma nova versão, adicione o instalador correspondente e atualize os links e a versão em `src/pages/index.astro`.
+Os downloads têm seus hashes SHA-256 registrados em `public/downloads/SHA256SUMS-windows.txt` e `public/downloads/SHA256SUMS-linux.txt`. Para publicar uma nova versão, adicione o instalador correspondente e atualize os links e a versão em `src/pages/index.astro`.
+
+No Windows, extraia o ZIP e execute `Marco-Setup-0.1.0-rc.1-windows-x64.exe`. Por ser uma versão beta ainda não assinada, o Windows poderá exibir um aviso de segurança antes da instalação.
 
 No Linux, o AppImage pode ser executado após receber permissão de execução. Em distribuições baseadas em Debian ou Ubuntu, use o pacote `.deb` para integrar o Marco ao menu de aplicativos.
 
@@ -231,7 +233,7 @@ Essa simplicidade é intencional e acompanha a proposta local-first do Marco. Ca
 - [ ] Adicionar screenshots e demonstrações atualizadas do produto.
 - [x] Publicar builds beta do Linux em AppImage e `.deb`.
 - [x] Publicar checksums dos pacotes Linux.
-- [ ] Gerar e validar o instalador do Windows em um runner Windows.
+- [x] Gerar e publicar o instalador beta do Windows.
 - [ ] Documentar o processo público e automatizado de releases.
 
 O roadmap pode mudar conforme o produto amadurece. Bugs, sugestões e discussões devem começar em uma [nova issue](https://github.com/RenatoCesarF/marco-landing-page/issues/new).
